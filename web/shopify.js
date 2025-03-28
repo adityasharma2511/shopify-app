@@ -1,7 +1,8 @@
 import { BillingInterval, LATEST_API_VERSION } from "@shopify/shopify-api";
 import { shopifyApp } from "@shopify/shopify-app-express";
 import { SQLiteSessionStorage } from "@shopify/shopify-app-session-storage-sqlite";
-import { restResources } from "@shopify/shopify-api/rest/admin/2024-10";
+import { restResources } from "@shopify/shopify-api/rest/admin/2024-07";
+import {MongoDBSessionStorage} from '@shopify/shopify-app-session-storage-mongodb';
 
 const DB_PATH = `${process.cwd()}/database.sqlite`;
 
@@ -35,7 +36,10 @@ const shopify = shopifyApp({
     path: "/api/webhooks",
   },
   // This should be replaced with your preferred storage strategy
-  sessionStorage: new SQLiteSessionStorage(DB_PATH),
+  sessionStorage:new MongoDBSessionStorage(
+    'mongodb+srv://adityaanilsharma00:adityaanil@cluster0.s2zhj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+    'Sessions',
+  ),
 });
 
 export default shopify;

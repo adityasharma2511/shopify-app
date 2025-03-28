@@ -1,3 +1,32 @@
-# This file stores configurations for your Shopify app.
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
+client_id = "b210868519badacaf28ab2774abf9846"
+name = "Try us - AR"
+handle = "try-us-ar"
+application_url = "https://screenshot-periodically-operate-criterion.trycloudflare.com"
+embedded = true
+
+[webhooks]
+api_version = "2024-07"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://screenshot-periodically-operate-criterion.trycloudflare.com/auth/callback",
+  "https://screenshot-periodically-operate-criterion.trycloudflare.com/auth/shopify/callback",
+  "https://screenshot-periodically-operate-criterion.trycloudflare.com/api/auth/callback"
+]
+
+[app_proxy]
+url = "https://screenshot-periodically-operate-criterion.trycloudflare.com/frontrequest"
+subpath = "aditya"
+prefix = "apps"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
